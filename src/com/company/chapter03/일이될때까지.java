@@ -21,7 +21,7 @@ public class 일이될때까지 {
         int N = scan.nextInt();
         int K = scan.nextInt();
 
-        if(N >= K || (N < 2 || N > 100000) || (K < 2 || K > 100000)){
+        if(N < K || (N < 2 || N > 100000) || (K < 2 || K > 100000)){
             System.out.println("입력 값이 정해진 범위를 초과했습니다.");
             System.exit(0);
         }
@@ -34,7 +34,16 @@ public class 일이될때까지 {
             result++;
         }
 
-        //
+        //수식이 잘 이해가 안감 ㅜ
+//        while(true){
+//            int target = N/K * K;   //17/4 * 4 = 16
+//            result += N - target;   //17-16 = 1
+//            N = target;             // 16
+//            if(N<K) break;
+//            result += 1;            // 2
+//            N = N/K;                // N = 4
+//        }
+//        result += N-1;
 
 
         System.out.println(result);
