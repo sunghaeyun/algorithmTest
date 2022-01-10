@@ -15,7 +15,7 @@ import java.util.Scanner;
  * 입력 예시    출력 예시
  * 25 5         2
  */
-public class 일이될때까지 {
+public class E04_일이될때까지 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int N = scan.nextInt();

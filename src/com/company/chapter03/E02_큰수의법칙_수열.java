@@ -2,7 +2,7 @@ package com.company.chapter03;
 
 import java.util.Arrays;
 
-public class 큰수의법칙_수열 {
+public class E02_큰수의법칙_수열 {
     public static void main(String[] args) {
         int[] fstLine = {5, 8, 3};
         int[] scdLine = {2,4,5,4,6};

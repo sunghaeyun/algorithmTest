@@ -7,7 +7,7 @@ import java.util.Scanner;
 import static java.lang.System.*;
 
 
-public class 숫자카드게임 {
+public class E03_숫자카드게임 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(in);
         String[] fstLine = sc.nextLine().split(" ");

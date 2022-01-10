@@ -6,7 +6,7 @@ import java.util.Scanner;
 /***
  * 큰 수의 법칙
  */
-public class 큰수의법칙 {
+public class E02_큰수의법칙 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub		
