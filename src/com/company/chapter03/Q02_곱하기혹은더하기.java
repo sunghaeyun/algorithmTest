@@ -23,10 +23,11 @@ public class Q02_곱하기혹은더하기 {
 		// 왼쪽부터 오른쪽으로 하나씩 숫자를 하면서 연산해주는 것이기때문에 순서대로 연산 후 sum에 넣는다.
 		// 최대값을 위해서는 곱하기가 제일 바람직하나, 0을 곱하면 0이 되버리기때문에 0일 경우만 체크해준다.
 		// (1)sum이 0일 경우 (2)연산할 숫자가 0일 경우를 확인하여 처리해준다.
+		// ㅠㅠ 1도 더하고 곱해줘야함...
 		int sum = numArr[0];
 		idx = 1;
 		while(idx < numArr.length){
-			if(sum == 0 || numArr[idx] == 0) sum += numArr[idx++];
+			if(sum <= 1 || numArr[idx] <= 1) sum += numArr[idx++];
 			else							 sum *= numArr[idx++];
 		}
 		

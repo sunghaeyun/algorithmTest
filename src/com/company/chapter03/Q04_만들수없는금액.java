@@ -13,65 +13,16 @@ public class Q04_만들수없는금액 {
 		int n = Integer.parseInt(nt);
 		String tempStr = scan.nextLine();
 		int[] coinArray = Arrays.stream(tempStr.split(" ")).mapToInt(Integer::parseInt).sorted().toArray();
-		
-		
-//		int idx = 0;
-//		int preNum = 0;
-//		int result = 0;
-//		int gap = 0;
-//		while(true){
-//			if(idx >= coinArray.length) break;
-//			System.out.println("coinArray[idx]:"+coinArray[idx]);
-//			System.out.println("preNum:"+preNum);
-//			gap = coinArray[idx] - preNum;
-//			if(gap >= 2){
-//				int subIdx = 0;
-//				int subSum = 0;
-//				boolean find = false;
-//				while(subIdx < idx){
-//					subSum += coinArray[subIdx];
-//					System.out.println("subSum:"+subSum);
-//					if(gap == subSum){
-//						find = true;
-//						result = coinArray[subIdx]-1;
-//						break;
-//					}
-//					subIdx++;
-//				}
-//				if(!find)	break;
-//			}
-//			preNum = coinArray[idx];
-//			idx++;
-//		}
-		
-		int result = 0;
-		int index = 1;
-		while (true) {
-			
-			int subIndex = 0;
-			int subSum = 0;
-			boolean flag = false;
-			System.out.println("index:"+index);
-			while(subIndex<coinArray.length){
-				System.out.println("subIndex:"+subIndex);
-				subSum += coinArray[0];
-				System.out.println("subSum:"+subSum);
-				if(index < subSum) break;
-				if(index == subSum){
-					flag = true;
-					break;
-				}
-				subIndex++;
-			}
-			if(!flag){
-				result = index;
-				break;
-			}
-			index++;
+
+		int idx = 0;
+		int sum = 1;
+		while(idx < coinArray.length){
+			if(sum < coinArray[idx]) break;
+			sum += coinArray[idx];
+			idx++;
 		}
 		
-		
-		System.out.println(result);
+		System.out.println(sum);
 	}
 
 }

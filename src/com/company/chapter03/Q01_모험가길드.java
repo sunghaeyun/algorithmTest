@@ -35,18 +35,31 @@ public class Q01_모험가길드 {
 				System.out.println("오입력");
 				System.exit(0);
 			}
-			
-			int max;		//현재 공포도가 제일 높은 모험가의 수치
+
+			//해설 ㅜㅜ 문제 제대로 읽으라...
+			int min;		//현재 공포도가 제일 낮은 모험가의 수치 
 			int cnt = 0;	//그룹 수
-			int idx = n-1;	//max의 index;
-			while(true){
-				if(idx < 0) break;		//index가 0 이하일 경우 종료
-				max = moFearIdx[idx];	//index로 max값 찾기
-				if(n < max) break;		//남은 모험가의 수가 max보다 작을 경우, 더 이상 그룹을 만들지 않고 남은 모험가를 마을에 잔존시킨다.
-				idx -= max;				//공포도 수만큼 그룹이 만들어지기 때문에 인덱스에서 max값을 제해준다. 그룹을 만들고 남은 모험가 중의 공포도 최대값을 찾기 위함.
-				n -= max;				//그룹을 만든 모험가의 수를 제해주기.
+			int idx = 0;	//min의 index;
+			while(idx < moFearIdx.length){
+				min = moFearIdx[idx];	//index로 min값 찾기
+				if(n < min) break;		//남은 모험가의 수가 min보다 작을 경우, 더 이상 그룹을 만들지 않고 남은 모험가를 마을에 잔존시킨다.
+				idx += min;				//공포도 수만큼 그룹이 만들어지기 때문에 인덱스에서 min값을 제해준다. 그룹을 만들고 남은 모험가 중의 공포도 최소값을 찾기 위함.
+				n -= min;				//그룹을 만든 모험가의 수를 제해주기.
 				cnt++;					//그룹의 수 카운트.
 			}
+			
+			//원래 푼거
+//			int max;		//현재 공포도가 제일 높은 모험가의 수치
+//			int cnt = 0;	//그룹 수
+//			int idx = n-1;	//max의 index;
+//			while(true){
+//				if(idx < 0) break;		//index가 0 이하일 경우 종료
+//				max = moFearIdx[idx];	//index로 max값 찾기
+//				if(n < max) break;		//남은 모험가의 수가 max보다 작을 경우, 더 이상 그룹을 만들지 않고 남은 모험가를 마을에 잔존시킨다.
+//				idx -= max;				//공포도 수만큼 그룹이 만들어지기 때문에 인덱스에서 max값을 제해준다. 그룹을 만들고 남은 모험가 중의 공포도 최대값을 찾기 위함.
+//				n -= max;				//그룹을 만든 모험가의 수를 제해주기.
+//				cnt++;					//그룹의 수 카운트.
+//			}
 			
 			System.out.println(cnt);
 			//System.out.println((double)(System.nanoTime() - first)/1000000000);
