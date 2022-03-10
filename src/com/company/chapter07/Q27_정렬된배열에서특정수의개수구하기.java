@@ -30,12 +30,11 @@ public class Q27_정렬된배열에서특정수의개수구하기 {
 
     //x가 시작하는 index 찾기
     public static int binarySearch(int[] arr, int target, int start, int end){
-        if(start == end) return idx;
-        while(start < end){
+        while(start <= end){
             int mid = (start+end)/2;
-            //찾는값이랑 같으면 idx에 회당 인덱스를 넣음.
+            //찾는값이랑 같으면 idx에 해당 인덱스를 넣음.
             if(arr[mid] == target) idx = mid;
-            if(arr[mid] <= target){
+            if(arr[mid] <= target){ //시작점을 찾기때문에 같을 때에도 왼쪽으로 이동시킨다.
                 end = mid -1;
                 binarySearch(arr, target, start, end);
             }
